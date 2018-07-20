@@ -1,0 +1,23 @@
+package com.example.training.myapplication;
+
+public class AddEvents {
+
+    public String date, time,eventname,description ,venue,speakerdetails;
+
+
+    public AddEvents(){
+
+          // Default constructor required for calls to DataSnapshot.getValue(User.class)
+//          String uid=new String();
+//        uid=mAuth.getCurrentUser().toString();
+//        Toast.makeText(this,uid,Toast.LENGTH_SHORT).show();
+    }
+    public AddEvents(String eventname,String description ,String time,String date,String venue,String speakerdetails) {
+        this.eventname = eventname;
+        this.description = description;
+        this.time = time;
+        this.date = date;
+        this.venue = venue;
+        this.speakerdetails = speakerdetails;
+    }
+}

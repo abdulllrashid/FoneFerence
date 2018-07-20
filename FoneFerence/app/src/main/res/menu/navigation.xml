@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/EventDetails"
+        android:title="Events"
+        android:icon="@drawable/baseline_event_black_24dp"/>
+
+
+    <item
+        android:id="@+id/Attendees"
+        android:title="Audiance"
+        android:icon="@drawable/baseline_people_black_24dp"/>
+
+    <item
+        android:id="@+id/Goods"
+        android:title="Mute"
+        android:icon="@drawable/baseline_save_alt_black_24dp"/>
+
+    <item
+        android:id="@+id/Profile"
+        android:title="Profile"
+        android:icon="@drawable/baseline_account_circle_black_24dp"/>
+</menu>

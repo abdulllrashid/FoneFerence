@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="visible"
+    tools:context=".Upload_File"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:hint="Browse files here"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"
+            android:textSize="23dp"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+
+            app:fontFamily="@font/roboto_thin"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="16dp"
+            />
+
+        <Button
+            android:id="@+id/browse_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#000"
+            android:textColor="@color/cardview_light_background"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+
+            android:onClick="browseClick"
+            android:text="Browse"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter the Title"
+            android:id="@+id/Title_text"
+
+
+            />
+
+
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter the Description"
+            android:id="@+id/Description_text"
+
+
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/upload_button"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="#000"
+        android:textColor="@color/cardview_light_background"
+        android:text="UPLOAD"
+        android:onClick="uploadClick"
+        android:layout_gravity="center"
+        />
+
+
+</LinearLayout>

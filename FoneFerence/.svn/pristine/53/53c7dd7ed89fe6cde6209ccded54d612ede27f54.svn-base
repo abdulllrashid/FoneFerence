@@ -1,0 +1,55 @@
+package com.example.training.myapplication;
+
+import android.app.Activity;
+import android.app.Fragment;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.view.MenuItem;
+import android.widget.TextView;
+
+
+public class MainActivity extends Activity {
+
+    private TextView mTextMessage;
+    public BottomNavigationView bottomNavigationView;
+
+
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            switch (item.getItemId()) {
+                case R.id.EventDetails:
+//                    mTextMessage.setText("Event Details");
+                    getFragmentManager().beginTransaction().replace(R.id.fragment_container,new EventList()).commit();
+                    return true;
+                case R.id.Attendees:
+//                    mTextMessage.setText("Attendees");
+                    return true;
+                case R.id.Goods:
+//                    mTextMessage.setText("Goods");
+                    return true;
+                case R.id.Profile:
+//                    mTextMessage.setText("Profile");
+                    return true;
+            }
+            return false;
+        }
+    };
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        bottomNavigationView=(BottomNavigationView)findViewById(R.id.navigation);
+        getFragmentManager().beginTransaction().add(R.id.fragment_container,new EventList()).commit();
+        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+    }
+}

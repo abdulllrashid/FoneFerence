@@ -1,0 +1,87 @@
+{
+  "project_info": {
+    "project_number": "341424838024",
+    "firebase_url": "https://foneferenca.firebaseio.com",
+    "project_id": "foneferenca",
+    "storage_bucket": "foneferenca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341424838024:android:0c143d0ee17d5cf1",
+        "android_client_info": {
+          "package_name": "com.example.training.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341424838024-cji1kcv2aho10cja9pqf0ldcsqub5h14.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.training.myapplication",
+            "certificate_hash": "6f4919be1f935941f211a8d6991a16cbdf20a691"
+          }
+        },
+        {
+          "client_id": "341424838024-dlth4asbmmi5pqaae6a2l5k7ecmjeqk1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.training.myapplication",
+            "certificate_hash": "79e14a892defe991859be2dce7b9249af7a358ac"
+          }
+        },
+        {
+          "client_id": "341424838024-mniol34tu4kc61hc5adlrbkdao4i99rg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.training.myapplication",
+            "certificate_hash": "3ff34a76d73b1acb4e8eaf7d1e9103d745356040"
+          }
+        },
+        {
+          "client_id": "341424838024-9fom7b2sc8209a3m2piv9n8grt4mh7vj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.training.myapplication",
+            "certificate_hash": "c87f97f6f000d827723291a3c2ba5588f4c18393"
+          }
+        },
+        {
+          "client_id": "341424838024-2arprslvnvlgt8sls9ut2ak0543sa60v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.training.myapplication",
+            "certificate_hash": "d119d80917f14615396e821fa5464c7a915ac21d"
+          }
+        },
+        {
+          "client_id": "341424838024-v717bmscuhohhie7rnlv4can5upelbt6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQbYzj56d20r72LZ4tMtAnVOiAK2NifLQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341424838024-v717bmscuhohhie7rnlv4can5upelbt6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

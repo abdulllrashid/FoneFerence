@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="150dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="60dp"
+    tools:context=".GoodsListFragment">
+
+
+    <!--<LinearLayout
+        android:layout_width="190dp"
+        android:layout_height="210dp"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.CardView
+
+            android:layout_width="190dp"
+            android:layout_height="210dp"
+            android:clickable="true"
+            android:elevation="3dp"
+            app:cardCornerRadius="5dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="186dp"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/certificates"
+                    android:layout_width="match_parent"
+                    android:layout_height="131dp"
+                    android:background="@drawable/certi"
+                    android:linksClickable="true"
+                    android:longClickable="false"
+                    android:onClick="onClick"
+                    android:scaleType="fitXY"
+                    tools:ignore="OnClick" />
+
+                <TextView
+                    android:id="@+id/CERTIFICATES"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contextClickable="true"
+                    android:gravity="center_horizontal"
+                    android:text="CERTIFICATES"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds" />
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+
+        android:layout_width="190dp"
+        android:layout_height="207dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="55dp"
+        android:clickable="true"
+        android:elevation="3dp"
+        app:cardCornerRadius="5dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="190dp"
+            android:layout_height="210dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/notes"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:background="@drawable/note"
+                android:linksClickable="true"
+                android:longClickable="false"
+                android:onClick="onClick"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/NOTES"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contextClickable="true"
+                android:gravity="center_horizontal"
+                android:text="NOTES"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="190dp"
+        android:layout_height="210dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="187dp">
+
+        <android.support.v7.widget.CardView
+
+            android:layout_width="190dp"
+            android:layout_height="207dp"
+            android:clickable="true"
+            android:elevation="3dp"
+            app:cardCornerRadius="5dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="188dp"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/coupons"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:background="@drawable/coupo"
+                    android:linksClickable="true"
+                    android:longClickable="false"
+                    android:onClick="onClick"
+                    android:scaleType="fitXY"
+                    tools:ignore="DuplicateIds" />
+
+                <TextView
+                    android:id="@+id/COUPONS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contextClickable="true"
+                    android:gravity="center_horizontal"
+                    android:text="COUPONS"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="DuplicateIds,OnClick" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="190dp"
+        android:layout_height="201dp"
+        android:layout_alignParentEnd="true"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="187dp"
+        android:layout_alignParentRight="true" />
+
+    <android.support.v7.widget.CardView
+
+        android:layout_width="190dp"
+        android:layout_height="210dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="54dp"
+        android:clickable="true"
+        android:elevation="3dp"
+        app:cardCornerRadius="5dp"
+        app:cardUseCompatPadding="true"
+        android:layout_alignParentLeft="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <ImageButton
+                android:id="@+id/slides"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:background="@drawable/slid"
+                android:linksClickable="true"
+                android:longClickable="false"
+                android:onClick="onClick"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/slides"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="SLIDES"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds,OnClick" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+
+-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/certificates"
+                android:layout_width="match_parent"
+                android:layout_height="131dp"
+                android:layout_weight="1"
+                android:paddingRight="10dp"
+                android:background="@drawable/certi"
+                android:linksClickable="true"
+                android:longClickable="false"
+                android:onClick="Certificates"
+                android:scaleType="fitXY"
+                android:paddingEnd="10dp" />
+
+            <ImageButton
+                android:id="@+id/coupons"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:paddingEnd="10dp"
+                android:onClick="foodcoupens"
+                android:background="@drawable/coupo"
+                android:linksClickable="true"
+                android:longClickable="false"
+                android:scaleType="fitXY"
+                tools:ignore="DuplicateIds,OnClick"
+                android:paddingRight="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/slides"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:onClick="Slides"
+                android:background="@drawable/slid"
+                android:linksClickable="true"
+                android:longClickable="false"
+                android:scaleType="fitXY"/>
+
+            <ImageButton
+                android:id="@+id/notes"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_weight="1"
+                android:paddingEnd="10dp"
+                android:onClick="Notes"
+                android:background="@drawable/note"
+                android:linksClickable="true"
+                android:longClickable="false"
+                android:scaleType="fitXY"
+                android:paddingRight="10dp"
+                tools:ignore="OnClick" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

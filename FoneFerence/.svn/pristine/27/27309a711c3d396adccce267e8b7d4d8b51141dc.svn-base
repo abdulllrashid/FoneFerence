@@ -1,0 +1,33 @@
+package com.example.training.myapplication;
+
+public class Profile {
+
+    private String Name,JobTitle,Location,MobileNumber,Emailid,ImageURL,type;
+
+
+    public Profile(){
+
+        // Default constructor required for calls to DataSnapshot.getValue(User.class)
+//          String uid=new String();
+//        uid=mAuth.getCurrentUser().toString();
+//        Toast.makeText(this,uid,Toast.LENGTH_SHORT).show();
+    }
+    public Profile(String Emailid,String MobileNumber,String type,String Location,String Name,String JobTitle) {
+        this.Name = Name;
+        this.type=type;
+        this.JobTitle = JobTitle;
+        this.Location = Location;
+        this.MobileNumber = MobileNumber;
+        this.Emailid = Emailid;
+
+        }
+
+    public String getName() { return Name; }
+    public String getJobTitle() { return JobTitle;    }
+    public String getLocation() { return Location;    }
+    public String getMobileNumber() { return MobileNumber; }
+    public String getEmailid() { return Emailid; }
+    public String getImageURL() { return ImageURL; }
+    public String getType() { return type; }
+
+}

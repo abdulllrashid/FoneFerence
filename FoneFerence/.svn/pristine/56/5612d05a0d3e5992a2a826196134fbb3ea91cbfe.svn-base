@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EventRegistrationForm">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/eventName"
+            android:layout_width="286dp"
+            android:layout_height="39dp"
+            android:hint="Event Name"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="17dp" />
+
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="286dp"
+            android:layout_height="120dp"
+            android:ems="10"
+            android:hint="Description"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="17dp" />
+
+        <LinearLayout
+            android:layout_width="286dp"
+            android:layout_height="39dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnTime"
+                android:layout_width="wrap_content"
+                android:layout_height="39dp"
+                android:text="Select"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/set_time"
+                android:layout_width="195dp"
+                android:layout_height="39dp"
+                android:gravity="center"
+                android:hint="Time"
+                android:textSize="17dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="286dp"
+            android:layout_height="39dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnDate"
+                android:layout_width="wrap_content"
+                android:layout_height="39dp"
+                android:text="select"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/set_date"
+                android:layout_width="195dp"
+                android:layout_height="39dp"
+                android:gravity="center"
+                android:hint="Date"
+                android:textSize="17dp" />
+
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/speakerDetails"
+            android:layout_width="286dp"
+            android:layout_height="39dp"
+            android:hint="Speaker Details"
+            android:textAlignment="center"
+            android:textSize="17dp" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"
+            android:text="Submit"
+            android:textSize="17dp" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

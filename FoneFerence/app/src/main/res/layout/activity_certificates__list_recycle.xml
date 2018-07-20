@@ -1,0 +1,39 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:theme="@style/Theme.AppCompat"
+    tools:context=".Certificates_List">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addCertbtn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_margin="35dp"
+        android:clickable="true"
+        app:backgroundTint="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/addbutton"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+      android:textColor="#000000"
+        android:text="No Certificates are available now"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cer_recyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+</RelativeLayout>

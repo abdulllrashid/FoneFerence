@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools = "http://schemas.android.com/tools" >
+
+
+    <android.support.v7.widget.CardView
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp"
+        android:layout_width="368dp"
+        android:layout_height="100dp"
+        app:contentPaddingTop="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="124dp">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="38dp"
+                android:layout_height="35dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="73dp"
+                android:layout_marginTop="23dp"
+                android:background="@drawable/delete"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="73dp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="216dp"
+                android:layout_height="69dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="24dp"
+                android:text="EVENT CERTIFICATE"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:fontFamily="@font/roboto"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="24dp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>
+
+
+
+

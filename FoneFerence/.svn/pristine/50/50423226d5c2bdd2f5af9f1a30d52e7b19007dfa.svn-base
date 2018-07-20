@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Coupon_List"
+    tools:layout_editor_absoluteY="81dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_height="84dp"
+        app:cardCornerRadius="15dp"
+        android:elevation="5dp"
+        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="@android:color/transparent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="2dp">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="114dp"
+            android:paddingLeft="2dp"
+            app:srcCompat="@android:color/transparent" />
+
+        <TextView
+            android:id="@+id/t1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Breakfast Coupon"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/roboto_thin" />
+
+        <Button
+            android:id="@+id/btn2"
+            style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+            android:layout_width="30dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/delete"
+            android:onClick="onClick"
+            android:visibility="visible"
+            tools:ignore="OnClick" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_height="88dp"
+        app:cardCornerRadius="15dp"
+        android:elevation="5dp"
+        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="@android:color/transparent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="89dp">
+
+
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        app:srcCompat="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/btn4"
+            style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+            android:layout_width="29dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/delete"
+            android:onClick="onClick"
+            android:visibility="visible"
+            tools:ignore="OnClick" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:color/transparent" />
+
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/t3"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:text="Lunch Coupon"
+        android:textColor="@android:color/background_dark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/roboto_thin"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="116dp" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_height="85dp"
+        app:cardCornerRadius="15dp"
+        android:elevation="5dp"
+        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="@android:color/transparent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="178dp">
+
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="match_parent"
+            android:layout_height="122dp"
+            app:srcCompat="@android:color/transparent" />
+
+        <TextView
+            android:id="@+id/t6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="20dp"
+            android:text="Tea Coupon"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/roboto_thin" />
+
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="30dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginRight="90dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/delete"
+            android:onClick="onClick"
+            android:visibility="visible"
+            tools:ignore="OnClick" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_height="84dp"
+        app:cardCornerRadius="15dp"
+        android:elevation="5dp"
+        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="@android:color/transparent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="267dp">
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="match_parent"
+            android:layout_height="129dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            android:visibility="visible"
+            app:srcCompat="@android:color/transparent" />
+
+        <TextView
+            android:id="@+id/t8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:text="Dinner Coupon"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/roboto_thin"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="362dp" />
+
+        <Button
+            android:id="@+id/btn8"
+            android:layout_width="30dp"
+            android:layout_height="37dp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/delete"
+            android:onClick="onClick"
+            android:visibility="visible"
+            tools:ignore="OnClick" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="51dp"
+        android:layout_height="57dp"
+        android:layout_margin="35dp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="32dp"
+        android:clickable="true"
+        app:backgroundTint="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/addbutton"
+        tools:ignore="MissingConstraints" />
+
+</android.support.constraint.ConstraintLayout>

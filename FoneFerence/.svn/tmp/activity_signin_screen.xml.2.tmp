@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+<<<<<<< .mine
+    android:paddingBottom="100dp"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp"
+    android:paddingTop="100dp"
+    android:background="#fff"
+=======
+>>>>>>> .r1120
+    tools:context=".SigninScreen"
+    android:background="#000000"
+    android:gravity="center_horizontal">
+
+
+
+<!--    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical">-->
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/splashscreenlogin"
+            android:scaleType="centerCrop"
+            tools:ignore="RtlCompat" />
+
+        <LinearLayout
+            android:id="@+id/email_password_fields"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_above="@+id/email_password_buttons"
+            android:layout_alignParentStart="true"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            tools:ignore="RtlCompat">
+
+            <EditText
+                android:id="@+id/field_email"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:background="#dedcdc"
+                android:text="r@q.com"
+                android:hint="@string/hint_email"
+                android:textAlignment="center"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/field_password"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+<<<<<<< .mine
+                android:text="12121212"
+=======
+                android:background="#dedcdc"
+>>>>>>> .r1120
+                android:hint="@string/hint_password"
+                android:textAlignment="center"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/email_password_buttons"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            tools:ignore="RtlCompat">
+
+            <Button
+                android:id="@+id/email_sign_in_button"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:background="#000"
+                android:text="@string/sign_in" />
+
+
+            <Button
+                android:id="@+id/email_create_account_button"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:background="#000"
+                android:onClick="onClick"
+                android:text="@string/create_account" />
+
+        </LinearLayout>
+
+
+   <!--</RelativeLayout>-->
+
+</RelativeLayout>

@@ -1,0 +1,70 @@
+package com.example.training.myapplication;
+
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+
+public class CouponAdapter extends RecyclerView.Adapter<CouponAdapter.CoupenViewHolder> {
+
+
+
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference CouponDbRef = database.getReference("/events/LGyrEUmq1V_gs8NmPme/Files/Certificates");
+
+
+    private ArrayList<String> arrayList;
+
+    CouponAdapter(ArrayList<String> arrayListt) {
+        this.arrayList = arrayListt;
+
+    }
+
+
+
+    @Override
+    public CouponAdapter.CoupenViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View view = inflater.inflate(R.layout.cardview_coupon_row, parent, false);
+        return new CoupenViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(final CouponAdapter.CoupenViewHolder holder, int position) {
+        holder.coupen_name.setText(arrayList.get(position));
+
+    }
+
+
+    @Override
+    public int getItemCount() {
+        return arrayList.size();
+    }
+
+    public class CoupenViewHolder extends RecyclerView.ViewHolder{
+
+        TextView coupen_name;
+        Button coupon_del;
+
+        public CoupenViewHolder(View itemView) {
+            super(itemView);
+
+            coupen_name = (TextView) itemView.findViewById(R.id.coupon_name);
+            coupon_del = (Button) itemView.findViewById(R.id.btn_coupon_del);
+
+
+        }
+
+    }
+
+
+}
+

@@ -1,0 +1,110 @@
+package com.example.training.myapplication;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.net.Uri;
+import android.os.Bundle;
+import android.app.Fragment;
+import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+
+public class AudianceListFragment extends Fragment {
+
+    RecyclerView audiencerecycle;
+    FirebaseDatabase firebaseDatabase;
+    String Eventid;
+    ArrayList<String> AudianceList;
+
+
+    DatabaseReference audienceDbRef;
+    ArrayList<HashMap<String, String>> AudianceListUpdated = new ArrayList<HashMap<String,String>>();
+    DatabaseReference AudianceDetailsRef=FirebaseDatabase.getInstance().getReference();
+
+
+
+    @SuppressLint("NewApi")
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        View v= inflater.inflate(R.layout.fragment_audiance_list, null);
+
+        Eventid=getArguments().getString("eventid");
+
+        audiencerecycle = v.findViewById(R.id.audience_recycle);
+        audiencerecycle.setLayoutManager(new LinearLayoutManager(getContext()));
+        AudianceList = new ArrayList<String>();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
+        audienceDbRef = firebaseDatabase.getReference("events/" +
+                Eventid +
+                "/Audiance");
+
+        audienceDbRef.addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                try {
+                    for (DataSnapshot snap : dataSnapshot.getChildren()) {
+                        String value = snap.getValue(String.class);
+                        Log.i("Tag", "Value " + value);
+                        AudianceList.add(value);
+
+                    }
+                    getProfileDetails();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        return v;
+    }
+
+    private void getProfileDetails() {
+        Log.d("test","getProfileDetails");
+        for(int i=0;i<AudianceList.size();i++){
+            final String userId = AudianceList.get(i);
+            DatabaseReference ProfileDetailsRef=FirebaseDatabase.getInstance().getReference("Users/"+userId);
+            ProfileDetailsRef.addValueEventListener(new ValueEventListener() {
+
+                @SuppressLint("NewApi")
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+
+                    Profile profile=dataSnapshot.getValue(Profile.class);
+                    HashMap<String,String> phash=new HashMap<>();
+                    phash.put("Name",profile.getName());
+                    phash.put("JobTitle",profile.getJobTitle());
+                    phash.put("userid",userId);
+                    AudianceListUpdated.add(phash);
+                    audiencerecycle.setAdapter(new AudienceAdapter(AudianceListUpdated, getContext()));
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }
+
+
+    }
+}

@@ -1,0 +1,232 @@
+package com.example.training.myapplication;
+
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Calendar;
+
+public class Editevent extends AppCompatActivity  {
+
+
+    private EditText eventnamE, venuE, speakerdetailS, descriptioN;
+    private FirebaseDatabase mDatabase;
+    private DatabaseReference myRef, eRef;
+    private FirebaseAuth mAuth;
+    String format;
+    TextView datE, timE;
+    public String montH,daY;
+    public String UID;
+    private int mYear, mMonth, mDay, mHour, mMinute;
+    ImageButton btnDatePicker, btnTimePicker;
+    public String ob;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_editevent);
+
+        btnDatePicker = findViewById(R.id.btnDate);
+        btnTimePicker = findViewById(R.id.btnTime);
+
+        mDatabase = FirebaseDatabase.getInstance();
+        mAuth = FirebaseAuth.getInstance();
+        UID = mAuth.getCurrentUser().getUid().toString();
+        myRef = mDatabase.getReference("Users/" + UID + "/Eventid");
+        eventnamE =  findViewById(R.id.editeventName);
+        datE = findViewById(R.id.editset_date);
+        timE =  findViewById(R.id.editset_time);
+        venuE = findViewById(R.id.editvenue);
+        speakerdetailS =  findViewById(R.id.speakerDetails);
+        descriptioN =  findViewById(R.id.editdescription);
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getValue() == null) {
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                }
+                else {
+                    ob = dataSnapshot.getValue().toString();
+                eRef = mDatabase.getReference("events/" + ob + "/details");
+                eRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        AddEvents events = dataSnapshot.getValue(AddEvents.class);
+                        eventnamE.setText(events.getEventname());
+//                        datE.setText(events.getDate().toString());
+//                        timE.setText(events.getTime().toString());
+                        venuE.setText(events.getVenue());
+                        speakerdetailS.setText(events.getSpeakerdetails());
+                        descriptioN.setText(events.getDescription());
+
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+    public void selectDate(View v) {
+
+
+            // Get Current Date
+            final Calendar c = Calendar.getInstance();
+            mYear = c.get(Calendar.YEAR);
+            mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                    new DatePickerDialog.OnDateSetListener() {
+
+                        @Override
+                        public void onDateSet(DatePicker view, int year,
+                                              int monthOfYear, int dayOfMonth) {
+
+                            datE.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                            daY=""+dayOfMonth;
+                            if ((monthOfYear+1)==1) {
+                                montH ="Jan";
+                            }
+                            else if((monthOfYear+1)==2) {
+                                montH ="Feb";
+                            }
+                            else if((monthOfYear+1)==3) {
+                                montH="Mar";
+                            }
+                            else if((monthOfYear+1)==4) {
+                                montH="Apr";
+                            }
+                            else if((monthOfYear+1)==5) {
+                                montH="May";
+                            }
+                            else if((monthOfYear+1)==6) {
+                                montH="Jun";
+                            }
+                            else if((monthOfYear+1)==7) {
+                                montH="Jul";
+                            }
+                            else if((monthOfYear+1)==8) {
+                                montH="Aug";
+                            }
+                            else if((monthOfYear+1)==9) {
+                                montH="Sep";
+                            }
+                            else if((monthOfYear+1)==10) {
+                                montH="Oct";
+                            }
+                            else if((monthOfYear+1)==11) {
+                                montH=" Nov";
+                            }
+                            else  {
+                                montH="Dec";
+                            }
+                        }
+                    }, mYear, mMonth, mDay);
+            datePickerDialog.show();
+
+    }
+
+    public void selectTime(View v){
+
+        // Get Current Time
+        final Calendar c = Calendar.getInstance();
+        mHour = c.get(Calendar.HOUR_OF_DAY);
+        mMinute = c.get(Calendar.MINUTE);
+
+        // Launch Time Picker Dialog
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this,
+                new TimePickerDialog.OnTimeSetListener() {
+
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay,
+                                          int minute) {
+                        if (hourOfDay == 0) {
+
+                            hourOfDay += 12;
+
+                            format = "AM";
+                        } else if (hourOfDay == 12) {
+
+                            format = "PM";
+
+                        } else if (hourOfDay > 12) {
+
+                            hourOfDay -= 12;
+
+                            format = "PM";
+
+                        } else {
+
+                            format = "AM";
+                        }
+
+                        timE.setText(hourOfDay + ":" + minute + " " + format);
+                    }
+                }, mHour, mMinute, false);
+        timePickerDialog.show();
+    }
+
+    public void onDeleteData(View v){
+
+        deleteUserData();
+        startActivity(new Intent(this, MainActivity.class));
+    }
+    private boolean updateEvent(String eventname, String description, String time,String date, String venue, String speakerdetails,String day,String month) {
+        //updating artist
+
+        mDatabase = FirebaseDatabase.getInstance();
+        AddEvents events = new AddEvents(eventname,description,time,date,venue,speakerdetails,day,month);
+        eRef.setValue(events);
+        Toast.makeText(getApplicationContext(), "Events Updated", Toast.LENGTH_LONG).show();
+        return true;
+    }
+    public void onSaveData(View v){
+        final String eventname = eventnamE.getText().toString();
+        final String description =descriptioN.getText().toString();
+        final String time = timE.getText().toString();
+        final String date = datE.getText().toString();
+        final String venue = venuE.getText().toString();
+        final String day=daY;
+        final String month=montH;
+        final String speakerderails = speakerdetailS.getText().toString();
+        updateEvent(eventname,description,time,date,venue,speakerderails,day,month);
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+    }
+
+
+    private void deleteUserData() {
+        mDatabase = FirebaseDatabase.getInstance();
+        eRef.removeValue();
+        mDatabase.getReference("Users/"+UID+"/Eventid").removeValue();
+        finish();
+    }
+
+}

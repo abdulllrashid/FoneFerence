@@ -1,0 +1,27 @@
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.AppCompat"
+    tools:context=".Certificates_List">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addCertbtn"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_margin="35dp"
+        android:clickable="true"
+        app:backgroundTint="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/addbutton"
+        tools:ignore="MissingConstraints" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/cer_recyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</android.support.constraint.ConstraintLayout>

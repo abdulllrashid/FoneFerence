@@ -1,0 +1,70 @@
+package com.example.training.myapplication;
+
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+
+public class SlideAdapter extends RecyclerView.Adapter<SlideAdapter.SlideViewHolder> {
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference slideDbRef = database.getReference("/events/LGyrEUmq1V_gs8NmPme/Files/Slides");
+
+
+    private ArrayList<String> arrayList;
+
+    SlideAdapter(ArrayList<String> arrayList) {
+        this.arrayList = arrayList;
+
+    }
+
+    @Override
+    public SlideAdapter.SlideViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View view = inflater.inflate(R.layout.cardview_slide_row, parent, false);
+
+
+
+
+        return new SlideViewHolder(view);
+
+    }
+
+    @Override
+    public void onBindViewHolder(SlideAdapter.SlideViewHolder holder, int position) {
+        holder.slide_namee.setText(arrayList.get(position));
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return arrayList.size();
+    }
+
+    public class SlideViewHolder extends RecyclerView.ViewHolder {
+        TextView slide_namee;
+        Button slide_buttonn;
+
+        public SlideViewHolder(View itemView) {
+            super(itemView);
+
+            slide_namee = (TextView) itemView.findViewById(R.id.slide_name);
+            slide_buttonn = (Button) itemView.findViewById(R.id.btn_slide_dwnd);
+
+
+            slide_buttonn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+        }
+    }
+}

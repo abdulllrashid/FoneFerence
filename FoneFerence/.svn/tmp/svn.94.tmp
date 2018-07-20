@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.training.myapplication">
+
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/themeapp"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!--<provider-->
+            <!--android:authorities="${applicationId}.my.package.name.provider"-->
+            <!--android:name=".GenericFileProvider"-->
+            <!--android:exported="false"-->
+            <!--android:grantUriPermissions="true">-->
+
+            <!--<meta-data-->
+                <!--android:name="android.support.FILE_PROVIDER_PATHS"-->
+                <!--android:resource="@xml/provider_paths"/>-->
+
+        <!--</provider>-->
+        <activity
+
+            android:label="@string/app_name"
+            android:screenOrientation="reversePortrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <activity android:name=".SigninScreen"/>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".EventRegistrationForm" />
+        <activity android:name=".EventDetailsList" />
+        <activity android:name=".Slide_list" />
+        <activity android:name=".Coupon_List" />
+        <activity android:name=".User_Registration" />
+        <activity android:name=".Editevent" />
+        <activity android:name=".Generateqrcode" />
+        <activity android:name=".Slidenote" />
+         <activity android:name=".ProfileView"/>
+        <activity android:name=".Audiencelist_profile" />
+        <activity android:name=".Audience_list" />
+         <activity android:name=".OptionsMenu"/>
+        <!--<activity android:name=".QRCodeReader" />-->
+         <activity android:name=".Main2Activity"/>
+         <activity android:name=".BaseActivity"/>
+         <activity android:name=".Slidenote_list"/>
+        <!-- <activity android:name=".QRCodeReader" /> -->
+
+
+    </application>
+
+</manifest>

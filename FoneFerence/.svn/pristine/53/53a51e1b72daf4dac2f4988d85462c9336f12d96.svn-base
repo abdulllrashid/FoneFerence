@@ -1,0 +1,46 @@
+package com.example.training.myapplication;
+
+import com.google.firebase.database.Exclude;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class AddEvents {
+
+    public String date, time,eventname,description ,venue,speakerdetails;
+
+
+    public AddEvents(){
+
+          // Default constructor required for calls to DataSnapshot.getValue(User.class)
+//          String uid=new String();
+//        uid=mAuth.getCurrentUser().toString();
+//        Toast.makeText(this,uid,Toast.LENGTH_SHORT).show();
+    }
+    public AddEvents(String eventname,String description ,String time,String date,String venue,String speakerdetails) {
+        this.eventname = eventname;
+        this.description = description;
+        this.time = time;
+        this.date = date;
+        this.venue = venue;
+        this.speakerdetails = speakerdetails;
+    }
+
+
+    // [START post_to_map]
+//    @Exclude
+//    public Map<String, Object> toMap() {
+//        HashMap<String, Object> result = new HashMap<>();
+//        result.put("",eventname);
+//        result.put("",description);
+//        result.put("",time);
+//        result.put("",date);
+//        result.put("",venue);
+//        result.put("",speakerdetails);
+//
+//        return result;
+//    }
+//
+//    // [END post_to_map]
+//
+}

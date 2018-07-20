@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fffefe</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#000000</color>
+    <color name="primary_device_default_dark">#ffffff</color>
+    <color name="background_holo_dark">#d5000000</color>
+    <color name="accent_material_light_1">#000000</color>
+    <color name="accent_material_light_2">#000000</color>
+    <color name="primary_dark_material_light_1">#000000</color>
+    <color name="accent_material_light">#000000</color>
+    <color name="primary_dark_material_light">#efe9e9</color>
+    <color name="background_material_dark_1">#000000</color>
+    <color name="primary_device_default_dark_1">#000000</color>
+
+    <color name="grey_100">#F5F5F5</color>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="grey_500">#9E9E9E</color>
+</resources>

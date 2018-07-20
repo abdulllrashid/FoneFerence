@@ -1,0 +1,80 @@
+package com.example.training.myapplication;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+
+
+public class MainActivity extends Activity {
+
+    private TextView mTextMessage;
+    public BottomNavigationView bottomNavigationView;
+
+
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            switch (item.getItemId()) {
+                case R.id.EventDetails:
+//                    mTextMessage.setText("Event Details");
+                    getFragmentManager().beginTransaction().replace(R.id.fragment_container,new EventListFragment()).commit();
+                    return true;
+
+                case R.id.Attendees:
+//                    mTextMessage.setText("Attendees");
+                    getFragmentManager().beginTransaction().replace(R.id.fragment_container,new AudianceListFragment()).commit();
+                    return true;
+                case R.id.Goods:
+//                    mTextMessage.setText("Goods");
+                    getFragmentManager().beginTransaction().replace(R.id.fragment_container,new GoodsListFragment()).commit();
+                    return true;
+                case R.id.Profile:
+//                    mTextMessage.setText("Profile");
+                    getFragmentManager().beginTransaction().replace(R.id.fragment_container,new ProfileFragment()).commit();
+                    return true;
+            }
+            return false;
+        }
+    };
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        bottomNavigationView=(BottomNavigationView)findViewById(R.id.navigation);
+        getFragmentManager().beginTransaction().add(R.id.fragment_container,new EventListFragment()).commit();
+        bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+    }
+    public void Slides(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),Slide_list.class));
+    }
+    public void Notes(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),Slidenote.class));
+    }
+    public void addetails(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),EventRegistrationForm.class));
+    }
+    public void Certificates(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),Certificates_List.class));
+    }
+    public void foodcoupens(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),Coupon_List.class));
+    }
+}
