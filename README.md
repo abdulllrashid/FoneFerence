@@ -20,8 +20,10 @@ App Overview or Flow of APP
     
 Future Updates
 __________________
-    
-    
+
+
+Implement Material.io new UI Components to the App
+
 Implement WEBRTC based communication channel for triggering Smartphone Microphone to speek up his ideas
     
 For event speeker show his slides dirictly from phone which will help hi to step into the stage without his lap
