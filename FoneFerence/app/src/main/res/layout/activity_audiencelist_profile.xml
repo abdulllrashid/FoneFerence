@@ -140,7 +140,7 @@
                     android:layout_marginLeft="50dp"
                     android:hint="Location"
                     android:textAlignment="center"
-                    android:textSize="18dp" />
+                    android:textSize="19dp" />
 
 
             </RelativeLayout>
